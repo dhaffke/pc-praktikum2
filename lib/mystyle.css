@@ -1,0 +1,199 @@
+/* ##################################################################################### */
+/* Feiertag: black */
+.holiday-cell {
+    background-color: black !important;
+}
+
+/* Horizontal Scroll nur für Datum */
+.table-scroll {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Sticky Name-Spalte */
+.sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: #ffffff;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+/* Sticky Header (oben links) */
+.sticky-header {
+    z-index: 3;
+    background: #f8f9fa;
+}
+
+/* Optional: Datumsspalten schmal */
+.date-header {
+    min-width: 80px;
+}
+
+.excel-wrapper {
+    overflow-x: auto;
+    max-height: 85vh;
+    border: 1px solid #ccc;
+}
+
+/* Tabelle */
+.excel-table {
+    border-collapse: collapse;
+    min-width: 1200px;
+    font-size: 13px;              /* kleiner Text */
+}
+
+/* Zellen */
+.excel-table th,
+.excel-table td {
+    border: 1px solid #e6e6e6;
+    padding: 2px 4px;             /* 👈 WENIGER ABSTAND */
+    min-width: 60px;              /* 👈 schmaler */
+    height: 24px;                 /* 👈 feste Höhe */
+    line-height: 1.2;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Header */
+.excel-table th {
+    background: #f3f3f3;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    font-weight: 600;
+}
+
+/* Erste Spalte fixiert */
+.excel-table td:first-child,
+.excel-table th:first-child {
+    position: sticky;
+    left: 0;
+    background: #fafafa;
+    font-weight: 600;
+    min-width: 160px;
+    z-index: 4;
+}
+
+/* Editierbare Zelle */
+.excel-table td[contenteditable="true"]:focus {
+    outline: none;
+    background: #eaf3ff;
+    box-shadow: inset 0 0 0 1px #4a90e2;
+}
+
+/* Dezente vertikale Wochenlinie */
+.week-start {
+    border-left: 2px solid #c8c8c8 !important;
+}
+
+/* Leichter Hintergrund für neue Woche */
+.week-start {
+    background-color: #fafafa;
+}
+
+/* Header etwas deutlicher */
+th.week-start {
+    background-color: #f0f0f0;
+    border-left: 2px solid #a8a8a8 !important;
+}
+
+/* ##################################################################################### */
+
+#snackbar {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 100%);
+    min-width: 280px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    z-index: 9999;
+    opacity: 0;
+    transition:
+            transform 0.35s cubic-bezier(.22,.68,0,1),
+            opacity 0.3s ease;
+}
+
+/* Sichtbar */
+#snackbar.show {
+    transform: translate(-50%, -40px);
+    opacity: 1;
+}
+
+/* Farben */
+#snackbar.success { background: #2e7d32; }
+#snackbar.error   { background: #c62828; }
+#snackbar.info    { background: #1565c0; }
+
+
+/* ##################################################################################### */
+
+.context-menu {
+    position: absolute;
+    display: none;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 9999;
+    min-width: 160px;
+}
+
+.context-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.context-menu li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.context-menu li:hover {
+    background-color: #f1f1f1;
+}
+
+
+.editable {
+    position: relative;
+}
+
+.cell-clear {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #999;
+    display: none;
+}
+
+.editable:hover .cell-clear {
+    display: block;
+}
+
+.cell-clear:hover {
+    color: red;
+}
+
+#logout-warning {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #c62828;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 9999;
+}
+
+
